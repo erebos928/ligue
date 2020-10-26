@@ -15,14 +15,22 @@ public class Player {
     private Nationality nationality;
     private int age;
     private double length;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinTable(
             name="Player_Team",
             joinColumns = {@JoinColumn(name="FK_PLAYER")},
             inverseJoinColumns = {@JoinColumn(name="FK_TEAM")}
     )
     private Set<Team> teams = new HashSet<Team>();
-    public String getName() {
+    public Set<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(Set<Team> teams) {
+		this.teams = teams;
+	}
+
+	public String getName() {
         return name;
     }
 
