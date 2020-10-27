@@ -14,7 +14,8 @@
         <thead><tr><td>Name</td><td>Surname</td><td>Country</td><td>Teams</td></tr></thead>
         <tbody>
         <c:forEach items="${players}" var="player">
-        <tr><td>${player.name}</td><td>${player.surname}</td><td>${player.nationality.country}</td></tr>
+        <tr><td>${player.name}</td><td>${player.surname}</td><td>${player.nationality.country}</td>
+        </tr>
         </c:forEach>
         </tbody>
         </table>
